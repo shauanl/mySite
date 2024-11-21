@@ -9,7 +9,7 @@ function App() {
   return (
     <Router future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
         <Nav />
-        <main className="mt-16 max-w-screen-xl mx-auto">
+        <main className="mt-16 w-full">
           <AnimatedRoutes />
         </main>
     </Router>

@@ -2,7 +2,11 @@
 export default {
   content: ['./index.html', './src/**/*.{js,jsx,ts,tsx}'],
   theme: {
-    extend: {},
+    extend: {
+      margin: {
+        '-1.25': '-5px',
+      },
+    },
   },
   plugins: [],
 }

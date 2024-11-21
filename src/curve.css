@@ -1,0 +1,29 @@
+.curve > svg {
+  width: 100vw;
+  height: calc(100vh + 600px);
+  top: - 300px;
+  left: 0;
+  position: fixed;
+  pointer-events: none;
+}
+
+.background {
+  width: 100vw;
+  height: calc(100vh + 600px);
+  top: - 300px;
+  left: 0;
+  position: fixed;
+  pointer-events: none;
+  background-color: black
+}
+
+.current-page {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    font-weight: bold;
+    font-size: 46px;
+    color: white;
+    z-index: 10;
+    transform: translate(-50%);
+}
