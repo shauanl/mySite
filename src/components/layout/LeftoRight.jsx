@@ -11,32 +11,30 @@ const anim = (variants) => {
     }
 }
 
-export default function Fade({children}) {
-    const animationUp = {
-        initial: { opacity: 0, y: 20 },
+export default function LefttoRight({children}) {
+    const animation = {
+        initial: {
+            x:-200,
+            opacity: 0
+        },
         enter: {
+            x: 0,
             opacity: 1,
-            y: 0,
-            scale: 1,
             transition: {
-                duration: 0.5,
-                delay: 0.7,
-                ease: "easeOut",
+                duration: 0.7,
+                delay: 0.5,
+                ease: "easeIn",
             },
-        },
-        exit: {
-            opacity: 0,
-            y: 20,
-            transition: { duration: 0.5 },
-        },
-    };
+        }
+    }
+
     return (
-        <motion.div {...anim(animationUp)}>
+        <motion.div {...anim(animation)}>
             {children}
         </motion.div>
     )
 }
 
-Fade.propTypes = {
+LefttoRight.propTypes = {
     children: PropTypes.node.isRequired,
 };

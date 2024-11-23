@@ -129,7 +129,7 @@ export default function Curve({ children }) {
 
     return (
         <div key={location.pathname}  className='page curve'>
-            <motion.div {...anim(text)} className="current-page">
+            <motion.div {...anim(text)} className="current-page ">
                 <h1 className="text-3xl font-bold">{location.pathname === '/' ? 'Bio' : location.pathname.slice(1, 2).toUpperCase() + location.pathname.slice(2)}</h1>
             </motion.div>
             <div style={{ opacity: dimensions.width > 0 ? 0 : 1 }} className="bg-cover"></div>
