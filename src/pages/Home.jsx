@@ -4,7 +4,6 @@ import Fade from "../components/layout/Fade";
 import FlipLetters from "../components/layout/FlipLetters";
 import Footer from "../components/Footer";
 import Skills from "../components/Skills";
-import MeMyself from "../components/layout/MeMyself";
 
 
 export default function Bio() {
@@ -26,7 +25,6 @@ export default function Bio() {
                     Shauan Ferreira Leite
                 </FlipLetters>
                 {/* <FlipLetters>Sr.Software Engineer </FlipLetters> */}
-                <MeMyself />
             </section>
             <hr className="border-t border-gray-300 my-8 max-w-screen-xl mx-auto" />
             <Skills></Skills>

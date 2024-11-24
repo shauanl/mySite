@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import { motion } from 'framer-motion';
 
 export default function FlipLetters({ children }) {
-    const totalLetters = children.length;
+    // const totalLetters = children.length;
 
     return (
         <>
