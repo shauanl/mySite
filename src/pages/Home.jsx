@@ -4,7 +4,7 @@ import Fade from "../components/layout/Fade";
 import FlipLetters from "../components/layout/FlipLetters";
 import Footer from "../components/Footer";
 import Skills from "../components/Skills";
-
+import myImg from '../assets/me.png';
 
 export default function Bio() {
 
@@ -25,13 +25,22 @@ export default function Bio() {
                     Shauan Ferreira Leite
                 </FlipLetters>
                 {/* <FlipLetters>Sr.Software Engineer </FlipLetters> */}
+                <Fade>
+                    <div className="img-section max-w-[450px] min-w-[300px] hidden md:block">
+                        <div className="aspect-w-16 aspect-h-9 relative overflow-hidden rounded-xl">
+                            <img src={myImg} alt="a photo of the developer" className="w-full h-auto object-contain rounded-xl" loading="lazy" />
+                        </div>
+                    </div>
+                </Fade>
             </section>
             <hr className="border-t border-gray-300 my-8 max-w-screen-xl mx-auto" />
             <Skills></Skills>
             <hr className="border-t border-gray-300 my-8 max-w-screen-xl mx-auto" />
-            <div className="max-w-screen-xl mx-auto">
-                <Footer />
-            </div>
+            <Fade>
+                <div className="max-w-screen-xl mx-auto">
+                    <Footer />
+                </div>
+            </Fade>
             <Curve></Curve>
         </section>
     )
