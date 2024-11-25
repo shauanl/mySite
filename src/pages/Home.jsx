@@ -1,7 +1,5 @@
 import Curve from "../components/layout/Curve";
 import Fade from "../components/layout/Fade";
-// import LeftoRight from "../components/layout/LeftoRight";
-import FlipLetters from "../components/layout/FlipLetters";
 import Footer from "../components/Footer";
 import Skills from "../components/Skills";
 import myImg from '../assets/me.png';
@@ -21,9 +19,10 @@ export default function Bio() {
                 </Fade>
             </section>
             <section className="home-present relative flex items-center justify-between gap-4 mt-8 max-w-screen-xl mx-auto">
-                <FlipLetters>
-                    Shauan Ferreira Leite
-                </FlipLetters>
+                <Fade>
+                    <div className="roboto-bold text-6xl">Shauan Ferreira Leite</div>
+                    <div className="ibm-plex-sans-medium text-xl">Brooklyn, NY</div>
+                </Fade>
                 {/* <FlipLetters>Sr.Software Engineer </FlipLetters> */}
                 <Fade>
                     <div className="img-section max-w-[450px] min-w-[300px] hidden md:block">
@@ -41,6 +40,7 @@ export default function Bio() {
                     <Footer />
                 </div>
             </Fade>
+
             <Curve></Curve>
         </section>
     )
