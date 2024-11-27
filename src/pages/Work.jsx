@@ -10,11 +10,12 @@ export default function Work() {
                 <h2 className="text-9xl text-left roboto-bol dpt-5">Work</h2>
                 <div></div>
                 <hr className="border-t border-gray-300 my-8 max-w-screen-xl mx-auto" />
-                <Footer />
+                <span className="text-xl text-green-900 roboto-bold ">REACT DEVELOPER WITH SFCC EXPERIENCE</span>
+                <hr className="border-t border-gray-300 my-8 max-w-screen-xl mx-auto" />
+            <Parallax />
+            <Footer />
             </Fade>
-            <Parallax>
 
-            </Parallax>
 
             <Curve></Curve>
         </section>
