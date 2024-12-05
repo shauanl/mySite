@@ -37,8 +37,8 @@ const TextParallaxContent = ({ imgUrl, heading, children}) => {
             }}
             className="">
             <div className="relative h-[40vh]">
-                <div className='roboto-bold text-base border-black pl-3 md:pl-7 uppercase'>{heading}</div>
-                <StickyImage imgUrl={imgUrl} project={heading} />
+                <div className='roboto-bold text-4xl border-black pl-3 md:pl-7 uppercase'>{heading}</div>
+                <StickyImage imgUrl={imgUrl} />
                 {/* // Removed the OverlayCopy component for future implementation  */}
                 {/* <OverlayCopy heading={heading} subheading={subheading} /> */}
             </div>
