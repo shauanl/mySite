@@ -5,17 +5,18 @@ import ProjectCards from '../ProjectCard';
 import projects from '../projectsData'
 export default function Parallax({ children }) {
     return (
-        <div className="section-parallax">
+        <div className="section-parallax grid grid-cols-1">
             {projects.map((project, index) => {
                 return (
                     <TextParallaxContent
                         key={index}
                         imgUrl={project.imgUrl}
                         heading={project.heading}
+                        subheading={project.subheading}
+                        ident={index}
                     >
                         <ProjectCards
                             heading={project.heading}
-                            subheading={project.subheading}
                             descriptionOne={project.descriptionOne}
                             descriptionTwo={project.descriptionTwo}
                         />
@@ -28,24 +29,31 @@ export default function Parallax({ children }) {
 }
 
 const IMG_PADDING = 12;
-const TextParallaxContent = ({ imgUrl, heading, children}) => {
+const TextParallaxContent = ({ imgUrl, heading, children, ident, subheading }) => {
+    let isEven = ident % 2 === 0
+    ident = ident + 1;
     return (
-        <div
-            style={{
-                paddingLeft: IMG_PADDING,
-                paddingRight: IMG_PADDING,
-            }}
-            className="">
-            <div className="relative h-[40vh]">
-                <div className='roboto-bold text-4xl border-black pl-3 md:pl-7 uppercase'>{heading}</div>
-                <StickyImage imgUrl={imgUrl} />
-                {/* // Removed the OverlayCopy component for future implementation  */}
-                {/* <OverlayCopy heading={heading} subheading={subheading} /> */}
+        <>
+            <div className={`ibm-plex-sans-medium text-xl border-black uppercase w-full  ${isEven ? 'text-right pr-3 md:pr-9' : 'text-left pl-3 md:pl-7'}`}>
+                {heading}
+                <span className="ibm-plex-sans-medium text-xs ml-3 block text-gray-400 inline-block mb-3">{subheading}</span>
             </div>
-            <div className='pt-10 md:pt-16'>
-                {children}
+            <div
+                style={{
+                    paddingLeft: IMG_PADDING,
+                    paddingRight: IMG_PADDING,
+                }}
+                className={`flex flex-wrap ${isEven ? 'flex-row-reverse' : ''}`}>
+                <div className="relative h-[50vh] w-1/2">
+                    <StickyImage imgUrl={imgUrl} />
+                    {/* // Removed the OverlayCopy component for future implementation  */}
+                    {/* <OverlayCopy heading={heading} subheading={subheading} /> */}
+                </div>
+                <div className='pt-2 w-1/2 flex items-center justify-center'>
+                    {children}
+                </div>
             </div>
-        </div>
+        </>
     )
 }
 
@@ -68,7 +76,7 @@ const StickyImage = ({ imgUrl }) => {
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
                 // backgroundAttachment: 'fixed',
-                height: `calc(45vh - ${IMG_PADDING * 2}px)`,
+                height: `calc(50vh - ${IMG_PADDING * 2}px)`,
                 top: IMG_PADDING,
                 scale,
             }}
@@ -123,6 +131,7 @@ TextParallaxContent.propTypes = {
     subheading: PropTypes.string,
     heading: PropTypes.string,
     children: PropTypes.node,
+    ident: PropTypes.number,
 }
 
 // Removed the OverlayCopy component for future implementation
