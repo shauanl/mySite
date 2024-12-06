@@ -34,7 +34,7 @@ const TextParallaxContent = ({ imgUrl, heading, children, ident, subheading }) =
     ident = ident + 1;
     return (
         <>
-            <div className={`ibm-plex-sans-medium text-xl border-black uppercase w-full  ${isEven ? 'text-right pr-3 md:pr-9' : 'text-left pl-3 md:pl-7'}`}>
+            <div className={`ibm-plex-sans-medium text-xl border-black uppercase w-full  ${isEven ? 'text-left pl-3 md:pl-7' : 'text-right pr-3 md:pr-9'}`}>
                 {heading}
                 <span className="ibm-plex-sans-medium text-xs ml-3 block text-gray-400 inline-block mb-3">{subheading}</span>
             </div>
@@ -43,7 +43,7 @@ const TextParallaxContent = ({ imgUrl, heading, children, ident, subheading }) =
                     paddingLeft: IMG_PADDING,
                     paddingRight: IMG_PADDING,
                 }}
-                className={`flex flex-wrap ${isEven ? 'flex-row-reverse' : ''}`}>
+                className={`flex flex-wrap ${isEven ? '' : 'flex-row-reverse'}`}>
                 <div className="relative h-[50vh] w-1/2">
                     <StickyImage imgUrl={imgUrl} />
                     {/* // Removed the OverlayCopy component for future implementation  */}
