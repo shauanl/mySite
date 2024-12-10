@@ -48,7 +48,7 @@ export default function Skills() {
                     {skills.map((skillGroup, groupIndex) => (
                         <motion.div
                             key={groupIndex}
-                            className="flex justify-center gap-12"
+                            className="flex justify-center gap-12 flex-col md:flex-row"
                             initial={{ opacity: 0, y: 50 }} // Start offscreen and invisible
                             whileInView={{ opacity: 1, y: 0 }} // Animate into view
                             viewport={{ once: true, amount: 0.2 }} // Trigger when 20% of the row is visible
@@ -77,7 +77,7 @@ export default function Skills() {
                                     </div>
 
                                     {/* Skill Text */}
-                                    <div className="ibm-plex-sans-medium text-2xl">
+                                    <div className="ibm-plex-sans-medium text-base md:text-2xl">
                                         {skill}
                                     </div>
                                 </div>

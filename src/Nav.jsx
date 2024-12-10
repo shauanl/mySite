@@ -8,7 +8,7 @@ export default function Nav() {
                     {/* <NavLink to="/" className="text-lg hover:text-gray-300">
                         Coded by Me
                     </NavLink> */}
-                    <ul className="flex">
+                    <ul className="flex mx-4 md:mx-0">
                         <li className="mr-10">
                             <NavLink
                                 to="/"
@@ -31,7 +31,7 @@ export default function Nav() {
                         </li>
                     </ul>
                 </div>
-                <ul className="flex space-x-6">
+                <ul className="flex space-x-6 mx-4 md:mx-0">
 
                     <li>
                         <NavLink

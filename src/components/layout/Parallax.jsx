@@ -35,7 +35,7 @@ const TextParallaxContent = ({ imgUrl, heading, children, ident, subheading }) =
 
     return (
         <>
-            <div className={`ibm-plex-sans-medium text-xl border-black uppercase w-full  ${isEven ? 'text-left pl-3 md:pl-7' : 'text-right pr-3 md:pr-9'}`}>
+            <div className={`ibm-plex-sans-medium text-xl border-black uppercase w-full mt-10 md:mt-0 mb-5 md:md-0  text-left ${isEven ? 'md:text-left pl-3 md:pl-7' : 'md:text-right pr-3 md:pr-9'}`}>
                 {heading}
                 <span className="ibm-plex-sans-medium text-xs ml-3 block text-gray-400 inline-block mb-3">{subheading}</span>
             </div>
@@ -44,13 +44,14 @@ const TextParallaxContent = ({ imgUrl, heading, children, ident, subheading }) =
                     paddingLeft: IMG_PADDING,
                     paddingRight: IMG_PADDING,
                 }}
-                className={`flex flex-wrap ${isEven ? '' : 'flex-row-reverse'}`}>
-                <div className="relative h-[50vh] w-1/2">
+                className={`flex flex-col sm:flex-row ${isEven ? '' : 'sm:flex-row-reverse'}`}
+>
+                <div className="relative h-[50vh] w-full md:w-1/2">
                     <StickyImage imgUrl={imgUrl} />
                     {/* // Removed the OverlayCopy component for future implementation  */}
                     {/* <OverlayCopy heading={heading} subheading={subheading} /> */}
                 </div>
-                <div className='pt-2 w-1/2 flex items-center justify-center'>
+                <div className='pt-2 w-full md:w-1/2 flex items-center justify-center'>
                     {children}
                 </div>
             </div>
