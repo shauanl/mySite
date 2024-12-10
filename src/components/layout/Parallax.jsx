@@ -19,6 +19,7 @@ export default function Parallax({ children }) {
                             heading={project.heading}
                             descriptionOne={project.descriptionOne}
                             descriptionTwo={project.descriptionTwo}
+                            ident={index}
                         />
                     </TextParallaxContent>
                 )
@@ -31,7 +32,7 @@ export default function Parallax({ children }) {
 const IMG_PADDING = 12;
 const TextParallaxContent = ({ imgUrl, heading, children, ident, subheading }) => {
     let isEven = ident % 2 === 0
-    ident = ident + 1;
+
     return (
         <>
             <div className={`ibm-plex-sans-medium text-xl border-black uppercase w-full  ${isEven ? 'text-left pl-3 md:pl-7' : 'text-right pr-3 md:pr-9'}`}>
