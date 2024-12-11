@@ -2,6 +2,12 @@ import { motion } from 'framer-motion';
 import Curve from "../components/layout/Curve"
 import Footer from "../components/Footer";
 
+const animation = (yOffset, duration) => ({
+    initial: { opacity: 0, y: yOffset },
+    animate: { opacity: 1, y: 0 },
+    transition: { duration: duration }
+})
+
 
 export default function Contact() {
 
@@ -11,29 +17,30 @@ export default function Contact() {
             <div className="contact-container flex flex-col md:flex-row px-5 md:px-0">
                 <div className="contact-info w-full m:w-1/2 flex-col">
                     <motion.p
-                        initial={{ opacity: 0, y: 150 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 1 }}
+                        {...animation(150, 1)}
                     className="roboto-light my-3 md:my-10">I am available for hire and open to any ideas of cooperation.</motion.p>
                     <motion.p
-                        initial={{ opacity: 0, y: 170 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 1.1 }}
-                    className="mt-10 mb-10">Email: shauanf@gmail.com</motion.p>
+                        {...animation(160, 1.1)}
+                        className="mt-10 mb-10 text-xl ibm-plex-sans-medium">Email: shauanf@gmail.com</motion.p>
                 </div>
                 <motion.div
-                    initial={{ opacity: 0, y: 170 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 1.2 }}
+                    {...animation(170, 1.2)}
                 className="contact-form w-full md:w-1/2">
                     <form className="flex flex-col">
-                        <label htmlFor="name" className="text-xl ibm-plex-sans-light">Name</label>
-                        <input required type="text" id="name" name="name" className="border border-gray-300 p-2 mb-4 roboto-regular" />
-                        <label htmlFor="email" className="text-xl ibm-plex-sans-light">Email</label>
-                        <input required type="email" id="email" name="email" className="border border-gray-300 p-2 mb-4 roboto-regular" />
-                        <label htmlFor="message" className="text-xl ibm-plex-sans-light">Message</label>
-                        <textarea required id="message" name="message" className="border border-gray-300 p-2 mb-4 roboto-regular"></textarea>
-                        <button className="roboto-regular bg-black text-white p-2 rounded-md">Send</button>
+                        <motion.label {...animation(160, 1)} htmlFor="name" className="text-xl ibm-plex-sans-light">Name</motion.label>
+                        <motion.input {...animation(150, 1.2)} required type="text" id="name" name="name" className="border border-gray-300 p-2 mb-4 roboto-regular" />
+                        <motion.label {...animation(160, 1.3)} htmlFor="email" className="text-xl ibm-plex-sans-light">Email</motion.label>
+                        <motion.input {...animation(160, 1.4)} required type="email" id="email" name="email" className="border border-gray-300 p-2 mb-4 roboto-regular" />
+                        <motion.label {...animation(160, 1.6)} htmlFor="message" className="text-xl ibm-plex-sans-light">Message</motion.label>
+                        <motion.textarea {...animation(160, 1.7)} required id="message" name="message" className="border border-gray-300 p-2 mb-4 roboto-regular"></motion.textarea>
+                        <motion.button {...animation(160, 1.8)}
+                            whileHover={{
+                                scale: 1.1,
+                                transition: { duration: 0.2 },
+                            }}
+                        className="roboto-regular bg-black text-white p-2 rounded-md">
+                            Send
+                        </motion.button>
                     </form>
                 </motion.div>
             </div>
